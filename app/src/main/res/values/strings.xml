@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Musical Structure</string>
+    <string name="browse">Browse</string>
+    <string name="songs">Songs</string>
+    <string name="artists">Artists</string>
+    <string name="albums">Albums</string>
+    <string name="nowPlaying">Now Playing</string>
+    <string name="nowPlayingSong">Song - </string>
+    <string name="nowPlayingArtist">Artist - </string>
+    <string name="nowPlayingAlbum">Album</string>
+
+    // Songs
+    <string name="song1">song1</string>
+    <string name="song2">song2</string>
+    <string name="song3">song3</string>
+
+    //Artists
+    <string name="artist1">artist1</string>
+    <string name="artist2">artist2</string>
+    <string name="artist3">artist3</string>
+
+    //Albums
+    <string name="album1">album1</string>
+    <string name="album2">album2</string>
+    <string name="album3">album3</string>
+
+
+</resources>

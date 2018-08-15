@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding16"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:src="@drawable/album_icon" />
+
+        <TextView
+            android:id="@+id/Songs"
+            style="@style/BrowseCategoryStyle"
+            android:gravity="center"
+            android:text="@string/song1" />
+
+        <TextView
+            android:id="@+id/Artists"
+            style="@style/BrowseCategoryStyle"
+            android:gravity="center"
+            android:text="@string/artist1" />
+
+        <TextView
+            android:id="@+id/Albums"
+            style="@style/BrowseCategoryStyle"
+            android:gravity="center"
+            android:text="@string/album1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/audioNavigationButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/buttonStyle"
+            android:src="@drawable/rewind" />
+
+        <ImageView
+            android:id="@+id/play_pause_button"
+            style="@style/buttonStyle"
+            android:src="@drawable/play" />
+
+        <ImageView
+            style="@style/buttonStyle"
+            android:src="@drawable/next" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

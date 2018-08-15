@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    // Text Sizes
+    <dimen name="textSize24">24sp</dimen>
+
+    // Padding and Margin
+    <dimen name="padding16">16dp</dimen>
+    <dimen name="padding8">8dp</dimen>
+
+    //Image Sizes
+    <dimen name="image30">30dp</dimen>
+</resources>

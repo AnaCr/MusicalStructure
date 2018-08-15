@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="@string/browse"
+            android:gravity="center"
+            style="@style/BrowseCategoryStyle"/>
+
+        <TextView
+            android:text="@string/songs"
+            style="@style/BrowseCategoryStyle"
+            android:id="@+id/songs_text_view"/>
+
+        <TextView
+            android:text="@string/artists"
+            style="@style/BrowseCategoryStyle"
+            android:id="@+id/artists_text_view"/>
+
+        <TextView
+            android:text="@string/albums"
+            style="@style/BrowseCategoryStyle"
+            android:id="@+id/albums_text_view"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nowplaying_text_view"
+        android:text="@string/nowPlaying"
+        style="@style/RegularStyle"
+        android:layout_marginLeft="@dimen/padding8"
+        android:layout_above="@id/nowPlaying"/>
+
+    <LinearLayout
+        android:id="@+id/nowPlaying"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@id/audioNavigationButtons"
+        android:gravity="center_horizontal"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            style="@style/SmallStyle"
+            android:text="@string/nowPlayingSong"/>
+
+        <TextView
+            style="@style/SmallStyle"
+            android:text="@string/nowPlayingArtist"/>
+
+        <TextView
+            style="@style/SmallStyle"
+            android:text="@string/nowPlayingAlbum"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/audioNavigationButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            style="@style/buttonStyle"
+            android:src="@drawable/rewind"/>
+
+        <ImageView
+            android:id="@+id/play_pause_button"
+            style="@style/buttonStyle"
+            android:src="@drawable/play"/>
+
+        <ImageView
+            style="@style/buttonStyle"
+            android:src="@drawable/next"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
