@@ -11,9 +11,10 @@ public class BrowseAlbumsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_browse_albums);
+        setContentView(R.layout.browse_item_list);
 
-        // Find view by id
+        //TODO: set click listener for album_parent_view
+        /*// Find view by id
         LinearLayout album = findViewById(R.id.album_parent_view);
 
         //Set onClickListener
@@ -24,6 +25,6 @@ public class BrowseAlbumsActivity extends AppCompatActivity {
                 Intent AlbumIntent = new Intent(BrowseAlbumsActivity.this, AlbumActivity.class);
                 startActivity(AlbumIntent);
             }
-        });
+        });*/
     }
 }
