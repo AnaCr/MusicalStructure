@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class BrowseAlbumsActivity extends AppCompatActivity {
 
@@ -13,18 +16,22 @@ public class BrowseAlbumsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.browse_item_list);
 
-        //TODO: set click listener for album_parent_view
-        /*// Find view by id
-        LinearLayout album = findViewById(R.id.album_parent_view);
+        // List the albums
+        ArrayList<Item> Albums = new ArrayList<Item>();
+        Albums.add(new Item("Mothership", R.drawable.album_icon));
+        Albums.add(new Item("Artificial Selection", R.drawable.album_icon));
+        Albums.add(new Item("Neighborhoods", R.drawable.album_icon));
+        Albums.add(new Item("We The Kings", R.drawable.album_icon));
+        Albums.add(new Item("Sunshine State of Mind", R.drawable.album_icon));
+        Albums.add(new Item("Somewhere Somehow", R.drawable.album_icon));
+        Albums.add(new Item("Six", R.drawable.album_icon));
+        Albums.add(new Item("Lovetap", R.drawable.album_icon));
+        Albums.add(new Item("The Science of Letting Go", R.drawable.album_icon));
 
-        //Set onClickListener
-        //AlbumActivity will begin when the album view is clicked
-        album.setOnClickListener (new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent AlbumIntent = new Intent(BrowseAlbumsActivity.this, AlbumActivity.class);
-                startActivity(AlbumIntent);
-            }
-        });*/
+        ItemAdapter adapter = new ItemAdapter(this, Albums);
+
+        ListView listView = (ListView) findViewById(R.id.list);
+
+        listView.setAdapter(adapter);
     }
 }

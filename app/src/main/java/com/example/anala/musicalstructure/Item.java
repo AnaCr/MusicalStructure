@@ -11,7 +11,7 @@ public class Item {
     /**
      * Create a new Item object.
      *
-     * @param itemName is the name of the song
+     * @param itemName is the name of the item
      * @param itemDrawableId is the id of the corresponding drawable
      */
     public Item(String itemName, int itemDrawableId) {
