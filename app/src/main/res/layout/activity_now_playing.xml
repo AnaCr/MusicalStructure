@@ -19,19 +19,19 @@
             android:src="@drawable/album_icon" />
 
         <TextView
-            android:id="@+id/Songs"
+            android:id="@+id/song"
             style="@style/BrowseCategoryStyle"
             android:gravity="center"
             android:text="@string/song1" />
 
         <TextView
-            android:id="@+id/Artists"
+            android:id="@+id/artist"
             style="@style/BrowseCategoryStyle"
             android:gravity="center"
             android:text="@string/artist1" />
 
         <TextView
-            android:id="@+id/Albums"
+            android:id="@+id/album"
             style="@style/BrowseCategoryStyle"
             android:gravity="center"
             android:text="@string/album1" />

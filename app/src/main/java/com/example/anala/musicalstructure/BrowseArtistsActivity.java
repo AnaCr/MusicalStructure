@@ -14,13 +14,16 @@ import java.util.ArrayList;
 
 public class BrowseArtistsActivity extends AppCompatActivity {
 
+    private ArrayList<Item> Artists;
+    public static Item currentArtist;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.browse_item_list);
 
         // List the artists
-        ArrayList<Item> Artists = new ArrayList<Item>();
+        Artists = new ArrayList<Item>();
         Artists.add(new Item("Dance Gavin Dance", R.drawable.artist_icon));
         Artists.add(new Item("We The Kings", R.drawable.artist_icon));
         Artists.add(new Item("Smallpools", R.drawable.artist_icon));
@@ -30,5 +33,27 @@ public class BrowseArtistsActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.list);
 
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+
+                if (i == 0) {
+                    Intent artistIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    // Give it the Song that was clicked
+                    currentArtist = Artists.get(0);
+                    startActivityForResult(artistIntent, 0);
+                }else if (i == 1) {
+                    Intent artistIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    // Give it the Song that was clicked
+                    currentArtist = Artists.get(1);
+                    startActivityForResult(artistIntent, 0);
+                }else if (i == 2) {
+                    Intent artistIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    // Give it the Song that was clicked
+                    currentArtist = Artists.get(2);
+                    startActivityForResult(artistIntent, 0);
+                }
+            }
+        });
     }
 }

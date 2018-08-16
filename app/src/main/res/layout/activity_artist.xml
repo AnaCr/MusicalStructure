@@ -9,12 +9,14 @@
     android:orientation="vertical">
 
     <ImageView
+        android:id="@+id/artist_image_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:src="@drawable/artist_icon" />
 
     <TextView
+        android:id="@+id/artist_name_text_view"
         style="@style/RegularStyle"
         android:text="@string/artist1"
         android:gravity="center"/>

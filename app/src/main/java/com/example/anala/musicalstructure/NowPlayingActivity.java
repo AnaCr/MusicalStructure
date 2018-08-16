@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class NowPlayingActivity extends AppCompatActivity {
 
@@ -14,6 +15,17 @@ public class NowPlayingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_playing);
+
+
+        /*//find views
+        TextView songNameTextView = findViewById(R.id.song);
+        TextView songArtistTextView = findViewById(R.id.artist);
+        TextView songAlbumTextView = findViewById(R.id.album);
+
+        //set text
+        songNameTextView.setText(BrowseSongsActivity.currentSong.getmSongName());
+        songArtistTextView.setText("Artist: " + BrowseSongsActivity.currentSong.getmSongArtist());
+        songAlbumTextView.setText("Album: " + BrowseSongsActivity.currentSong.getmSongAlbum());*/
 
         final ImageView playPauseButton = findViewById(R.id.play_pause_button);
 

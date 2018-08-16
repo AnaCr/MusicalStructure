@@ -3,6 +3,7 @@ package com.example.anala.musicalstructure;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -11,28 +12,17 @@ import java.util.ArrayList;
 
 public class BrowseSongsActivity extends AppCompatActivity {
 
+    private ArrayList<Song> songs;
+    public static Song currentSong;
+    public static String prevousActivity = "BrowseSongsActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.browse_item_list);
 
-        // Find the song TextView
-        ListView song = findViewById(R.id.list);
-
-        // Set onClick listener
-        // clicking the song name will open the Now Playing Activity and play that song
-
-        /*song.setOnClickListener (new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent nowPlayingIntent = new Intent(BrowseSongsActivity.this, NowPlayingActivity.class);
-
-                startActivity(nowPlayingIntent);
-                }
-        });*/
-
         // List the songs
-        ArrayList<Song> songs = new ArrayList<Song>();
+        songs = new ArrayList<Song>();
         songs.add(new Song("Chucky vs. The Giant Tortoise", "Dance Gavin Dance", "Mothership"));
         songs.add(new Song("Young Robot", "Dance Gavin Dance", "Mothership"));
         songs.add(new Song("Frozen One", "Dance Gavin Dance", "Mothership"));
@@ -45,6 +35,7 @@ public class BrowseSongsActivity extends AppCompatActivity {
         songs.add(new Song("Betrayed by the Game", "Dance Gavin Dance", "Mothership"));
         songs.add(new Song("Petting Zoo Justice", "Dance Gavin Dance", "Mothership"));
         songs.add(new Song("Man of the Year", "Dance Gavin Dance", "Mothership"));
+        songs.add(new Song("test", "test", "test"));
 
         SongAdapter adapter = new SongAdapter(this, songs);
 
@@ -55,8 +46,20 @@ public class BrowseSongsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
 
-                Intent nowPlayingIntent = new Intent(view.getContext(), NowPlayingActivity.class);
-                startActivityForResult(nowPlayingIntent, 0);
+                if (i == 0) {
+                    Intent nowPlayingIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    // Give it the Song that was clicked
+                    currentSong = songs.get(0);
+                    startActivityForResult(nowPlayingIntent, 0);
+                }else if (i == 1) {
+                    Intent nowPlayingIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    // Give it the song that was clicked
+                    currentSong = songs.get(1);
+                    startActivityForResult(nowPlayingIntent, 0);
+                }
+
+                //Intent nowPlayingIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                //startActivityForResult(nowPlayingIntent, 0);
 
             }
         });
