@@ -1,7 +1,10 @@
 package com.example.anala.musicalstructure;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -48,5 +51,14 @@ public class BrowseSongsActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.list);
 
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+
+                Intent nowPlayingIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                startActivityForResult(nowPlayingIntent, 0);
+
+            }
+        });
     }
 }
