@@ -14,11 +14,18 @@ public class BrowseAlbumsActivity extends AppCompatActivity {
 
     private ArrayList<Item> Albums;
     public static Item currentAlbum;
+    private ArrayList<Song> songs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.browse_item_list);
+
+        // get the song wrapper and songs ListArray from Main
+        SongWrapper songWrapper = (SongWrapper) getIntent().getSerializableExtra("songsWrapper");
+        songs = songWrapper.getSongs();
+        // create song wrapper to send songs ListArray to next Activity
+        final SongWrapper wrapper = new SongWrapper(songs);
 
         // List the albums
         Albums = new ArrayList<Item>();
@@ -40,23 +47,10 @@ public class BrowseAlbumsActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-
-                if (i == 0) {
-                    Intent artistIntent = new Intent(view.getContext(), NowPlayingActivity.class);
-                    // Give it the Song that was clicked
-                    currentAlbum = Albums.get(0);
-                    startActivityForResult(artistIntent, 0);
-                }else if (i == 1) {
-                    Intent artistIntent = new Intent(view.getContext(), NowPlayingActivity.class);
-                    // Give it the Song that was clicked
-                    currentAlbum = Albums.get(1);
-                    startActivityForResult(artistIntent, 0);
-                }else if (i == 2) {
-                    Intent artistIntent = new Intent(view.getContext(), NowPlayingActivity.class);
-                    // Give it the Song that was clicked
-                    currentAlbum = Albums.get(2);
-                    startActivityForResult(artistIntent, 0);
-                }
+                Intent nowPlayingIntent = new Intent(BrowseAlbumsActivity.this, NowPlayingActivity.class);
+                nowPlayingIntent.putExtra("FROM_ACTIVITY", "BrowseAlbums");
+                nowPlayingIntent.putExtra("songsWrapper", wrapper);
+                startActivity(nowPlayingIntent);
             }
         });
     }
