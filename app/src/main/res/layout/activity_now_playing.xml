@@ -12,7 +12,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/title_text_view"
+            style="@style/BrowseCategoryStyle"
+            android:text="@string/nowPlayingTitle"/>
+
         <ImageView
+            android:id="@+id/image_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"

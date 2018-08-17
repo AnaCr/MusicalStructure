@@ -39,16 +39,19 @@ public class BrowseArtistsActivity extends AppCompatActivity {
 
                 if (i == 0) {
                     Intent artistIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    artistIntent.putExtra("FROM_ACTIVITY", "BrowseArtists");
                     // Give it the Song that was clicked
                     currentArtist = Artists.get(0);
                     startActivityForResult(artistIntent, 0);
                 }else if (i == 1) {
                     Intent artistIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    artistIntent.putExtra("FROM_ACTIVITY", "BrowseArtists");
                     // Give it the Song that was clicked
                     currentArtist = Artists.get(1);
                     startActivityForResult(artistIntent, 0);
                 }else if (i == 2) {
                     Intent artistIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    artistIntent.putExtra("FROM_ACTIVITY", "BrowseArtists");
                     // Give it the Song that was clicked
                     currentArtist = Artists.get(2);
                     startActivityForResult(artistIntent, 0);

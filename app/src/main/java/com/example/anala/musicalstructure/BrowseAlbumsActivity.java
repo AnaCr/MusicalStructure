@@ -42,20 +42,23 @@ public class BrowseAlbumsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
 
                 if (i == 0) {
-                    Intent artistIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    Intent albumIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    albumIntent.putExtra("FROM_ACTIVITY", "BrowseAlbums");
                     // Give it the Song that was clicked
                     currentAlbum = Albums.get(0);
-                    startActivityForResult(artistIntent, 0);
+                    startActivityForResult(albumIntent, 0);
                 }else if (i == 1) {
-                    Intent artistIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    Intent albumIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    albumIntent.putExtra("FROM_ACTIVITY", "BrowseAlbums");
                     // Give it the Song that was clicked
                     currentAlbum = Albums.get(1);
-                    startActivityForResult(artistIntent, 0);
+                    startActivityForResult(albumIntent, 0);
                 }else if (i == 2) {
-                    Intent artistIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    Intent albumIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    albumIntent.putExtra("FROM_ACTIVITY", "BrowseAlbums");
                     // Give it the Song that was clicked
                     currentAlbum = Albums.get(2);
-                    startActivityForResult(artistIntent, 0);
+                    startActivityForResult(albumIntent, 0);
                 }
             }
         });

@@ -12,9 +12,8 @@ import java.util.ArrayList;
 
 public class BrowseSongsActivity extends AppCompatActivity {
 
-    private ArrayList<Song> songs;
+    public ArrayList<Song> songs;
     public static Song currentSong;
-    public static String prevousActivity = "BrowseSongsActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +47,13 @@ public class BrowseSongsActivity extends AppCompatActivity {
 
                 if (i == 0) {
                     Intent nowPlayingIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    nowPlayingIntent.putExtra("FROM_ACTIVITY", "BrowseSongs");
                     // Give it the Song that was clicked
                     currentSong = songs.get(0);
                     startActivityForResult(nowPlayingIntent, 0);
                 }else if (i == 1) {
                     Intent nowPlayingIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                    nowPlayingIntent.putExtra("FROM_ACTIVITY", "BrowseSongs");
                     // Give it the song that was clicked
                     currentSong = songs.get(1);
                     startActivityForResult(nowPlayingIntent, 0);

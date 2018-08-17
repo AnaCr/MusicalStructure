@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent nowPlayingIntent = new Intent(MainActivity.this, NowPlayingActivity.class);
+                nowPlayingIntent.putExtra("FROM_ACTIVITY", "Main");
                 startActivity(nowPlayingIntent);
             }
         });
