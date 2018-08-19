@@ -13,6 +13,9 @@ public class Song implements Serializable {
     // song album
     private String mSongAlbum;
 
+    // drawable id
+    private int mSongDrawableId;
+
     /**
      * Create a new Song object.
      *
@@ -20,10 +23,11 @@ public class Song implements Serializable {
      * @param songArtist is the artist
      * @param songAlbum is the album
      */
-    public Song (String songName, String songArtist, String songAlbum) {
+    public Song (String songName, String songArtist, String songAlbum, int songDrawableId) {
         mSongName = songName;
         mSongArtist = songArtist;
         mSongAlbum = songAlbum;
+        mSongDrawableId = songDrawableId;
     }
 
     // get the name of the song
@@ -40,5 +44,8 @@ public class Song implements Serializable {
     public String getmSongAlbum() {
         return mSongAlbum;
     }
+
+    // get the drawable Id
+    public int getmSongDrawableId() { return mSongDrawableId;}
 
 }

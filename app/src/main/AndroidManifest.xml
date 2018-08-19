@@ -28,11 +28,6 @@
         <activity
             android:name=".NowPlayingActivity"
             android:label="@string/nowPlaying" />
-        <activity
-            android:name=".ArtistActivity"
-            android:label="@string/artists" />
-        <activity android:name=".AlbumActivity"
-            android:label="@string/albums"></activity>
     </application>
 
 </manifest>

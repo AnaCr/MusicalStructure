@@ -10,4 +10,6 @@
 
     //Image Sizes
     <dimen name="image30">30dp</dimen>
+    <dimen name="image100">100dp</dimen>
+    <dimen name="image150">150dp</dimen>
 </resources>

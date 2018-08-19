@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/logo_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image150"
+        android:gravity="center"
+        android:layout_margin="@dimen/padding16"
+        android:src="@drawable/applogo" />
+
     <TextView
         style="@style/BrowseCategoryStyle"
         android:gravity="center"
@@ -26,11 +34,6 @@
         android:id="@+id/albums_text_view"
         style="@style/BrowseCategoryStyle"
         android:text="@string/albums" />
-
-    <TextView
-        android:id="@+id/now_playing_text_view"
-        style="@style/BrowseCategoryStyle"
-        android:text="@string/nowPlaying" />
 
 
 </LinearLayout>

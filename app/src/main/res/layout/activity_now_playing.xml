@@ -12,10 +12,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/title"
+            style="@style/BrowseCategoryStyle"
+            android:text="@string/nowPlayingTitle" />
+
         <ImageView
             android:id="@+id/song_image_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/image150"
             android:gravity="center"
             android:src="@drawable/album_icon" />
 
@@ -55,7 +60,7 @@
         <ImageView
             android:id="@+id/play_pause_button"
             style="@style/buttonStyle"
-            android:src="@drawable/play" />
+            android:src="@drawable/pause" />
 
         <ImageView
             android:id="@+id/next_button"
