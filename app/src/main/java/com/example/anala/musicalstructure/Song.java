@@ -1,6 +1,8 @@
 package com.example.anala.musicalstructure;
 
-public class Song {
+import java.io.Serializable;
+
+public class Song implements Serializable {
 
     // song name
     private String mSongName;
@@ -11,6 +13,9 @@ public class Song {
     // song album
     private String mSongAlbum;
 
+    // drawable id
+    private int mSongDrawableId;
+
     /**
      * Create a new Song object.
      *
@@ -18,10 +23,11 @@ public class Song {
      * @param songArtist is the artist
      * @param songAlbum is the album
      */
-    public Song(String songName, String songArtist, String songAlbum) {
+    public Song (String songName, String songArtist, String songAlbum, int songDrawableId) {
         mSongName = songName;
         mSongArtist = songArtist;
         mSongAlbum = songAlbum;
+        mSongDrawableId = songDrawableId;
     }
 
     // get the name of the song
@@ -38,5 +44,8 @@ public class Song {
     public String getmSongAlbum() {
         return mSongAlbum;
     }
+
+    // get the drawable Id
+    public int getmSongDrawableId() { return mSongDrawableId;}
 
 }
