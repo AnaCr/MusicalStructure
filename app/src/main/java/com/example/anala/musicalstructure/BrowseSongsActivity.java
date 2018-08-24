@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class BrowseSongsActivity extends AppCompatActivity {
 
-    private ArrayList<Song> songs;
+    public ArrayList<Song> songs;
     public static Song currentSong;
     public static int currentSongIndex;
 
@@ -35,7 +35,6 @@ public class BrowseSongsActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-
                 Intent nowPlayingIntent = new Intent(view.getContext(), NowPlayingActivity.class);
                 nowPlayingIntent.putExtra("FROM_ACTIVITY", "BrowseSongs");
                 nowPlayingIntent.putExtra("currentSongIndex", i);
@@ -43,7 +42,6 @@ public class BrowseSongsActivity extends AppCompatActivity {
                 currentSongIndex = i;
                 currentSong = songs.get(i);
                 startActivityForResult(nowPlayingIntent, 0);
-
             }
         });
     }

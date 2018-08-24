@@ -9,6 +9,7 @@
     <string name="nowPlayingSong">Song - </string>
     <string name="nowPlayingArtist">Artist - </string>
     <string name="nowPlayingAlbum">Album</string>
+    <string name="nowPlayingTitle">Title</string>
 
     // Songs
     <string name="song1">song1</string>
