@@ -5,6 +5,7 @@
     <string name="artists">Artists</string>
     <string name="albums">Albums</string>
     <string name="nowPlaying">Now Playing</string>
+    <string name="nowPlayingTitle">Title</string>
     <string name="nowPlayingSong">Song - </string>
     <string name="nowPlayingArtist">Artist - </string>
     <string name="nowPlayingAlbum">Album</string>

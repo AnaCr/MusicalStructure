@@ -14,54 +14,34 @@ public class BrowseSongsActivity extends AppCompatActivity {
 
     public ArrayList<Song> songs;
     public static Song currentSong;
+    public static int currentSongIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.browse_item_list);
 
-        // List the songs
-        songs = new ArrayList<Song>();
-        songs.add(new Song("Chucky vs. The Giant Tortoise", "Dance Gavin Dance", "Mothership"));
-        songs.add(new Song("Young Robot", "Dance Gavin Dance", "Mothership"));
-        songs.add(new Song("Frozen One", "Dance Gavin Dance", "Mothership"));
-        songs.add(new Song("Flossie Dickey Bounce", "Dance Gavin Dance", "Mothership"));
-        songs.add(new Song("Deception", "Dance Gavin Dance", "Mothership"));
-        songs.add(new Song("Inspire the Liars", "Dance Gavin Dance", "Mothership"));
-        songs.add(new Song("Philosopher King", "Dance Gavin Dance", "Mothership"));
-        songs.add(new Song("Here Comes the Winner", "Dance Gavin Dance", "Mothership"));
-        songs.add(new Song("Exposed", "Dance Gavin Dance", "Mothership"));
-        songs.add(new Song("Betrayed by the Game", "Dance Gavin Dance", "Mothership"));
-        songs.add(new Song("Petting Zoo Justice", "Dance Gavin Dance", "Mothership"));
-        songs.add(new Song("Man of the Year", "Dance Gavin Dance", "Mothership"));
-        songs.add(new Song("test", "test", "test"));
+        // get the song wrapper and songs ListArray from Main
+        SongWrapper songWrapper = (SongWrapper) getIntent().getSerializableExtra("songsWrapper");
+        songs = songWrapper.getSongs();
 
+        // create song wrapper to send songs ListArray to next Activity
+        final SongWrapper wrapper = new SongWrapper(songs);
+
+        //list the songs
         SongAdapter adapter = new SongAdapter(this, songs);
-
-        ListView listView = (ListView) findViewById(R.id.list);
-
+        ListView listView = findViewById(R.id.list);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-
-                if (i == 0) {
-                    Intent nowPlayingIntent = new Intent(view.getContext(), NowPlayingActivity.class);
-                    nowPlayingIntent.putExtra("FROM_ACTIVITY", "BrowseSongs");
-                    // Give it the Song that was clicked
-                    currentSong = songs.get(0);
-                    startActivityForResult(nowPlayingIntent, 0);
-                }else if (i == 1) {
-                    Intent nowPlayingIntent = new Intent(view.getContext(), NowPlayingActivity.class);
-                    nowPlayingIntent.putExtra("FROM_ACTIVITY", "BrowseSongs");
-                    // Give it the song that was clicked
-                    currentSong = songs.get(1);
-                    startActivityForResult(nowPlayingIntent, 0);
-                }
-
-                //Intent nowPlayingIntent = new Intent(view.getContext(), NowPlayingActivity.class);
-                //startActivityForResult(nowPlayingIntent, 0);
-
+                Intent nowPlayingIntent = new Intent(view.getContext(), NowPlayingActivity.class);
+                nowPlayingIntent.putExtra("FROM_ACTIVITY", "BrowseSongs");
+                nowPlayingIntent.putExtra("currentSongIndex", i);
+                nowPlayingIntent.putExtra("songsWrapper", wrapper);
+                currentSongIndex = i;
+                currentSong = songs.get(i);
+                startActivityForResult(nowPlayingIntent, 0);
             }
         });
     }
