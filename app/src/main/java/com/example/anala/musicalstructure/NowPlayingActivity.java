@@ -1,5 +1,6 @@
 package com.example.anala.musicalstructure;
 
+
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.OnLifecycleEvent;
 import android.support.v7.app.AppCompatActivity;
@@ -211,7 +212,6 @@ public class NowPlayingActivity extends AppCompatActivity {
                     playPauseButton.setImageDrawable(getResources().getDrawable(R.drawable.play));
                     isPlaying = false;
                 }
-
 
             }
         });

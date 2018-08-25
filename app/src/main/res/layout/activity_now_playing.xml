@@ -19,6 +19,7 @@
 
         <ImageView
             android:id="@+id/song_image_view"
+
             android:layout_width="match_parent"
             android:layout_height="@dimen/image150"
             android:gravity="center"
