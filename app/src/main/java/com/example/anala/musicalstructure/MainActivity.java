@@ -1,21 +1,23 @@
 package com.example.anala.musicalstructure;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import org.w3c.dom.Text;
-
 import java.util.ArrayList;
+import java.util.Set;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ArrayList<Song> songs;
+    private SongWrapper wrapper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,41 +82,41 @@ public class MainActivity extends AppCompatActivity {
                 "Lovetap!", R.drawable.lovetap));
 
         // Create wrapper to send ArrayList as intent extra
-        final SongWrapper wrapper = new SongWrapper(songs);
+        wrapper = new SongWrapper(songs);
 
         // Finds the views by id
-        final TextView browseSongs = findViewById(R.id.songs_text_view);
+        TextView browseSongs = findViewById(R.id.songs_text_view);
         TextView browseArtists = findViewById(R.id.artists_text_view);
         TextView browseAlbums = findViewById(R.id.albums_text_view);
 
-        //Set onClick Listener for songs_text_view
-        browseSongs.setOnClickListener (new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        browseSongs.setOnClickListener(this);
+        browseArtists.setOnClickListener(this);
+        browseAlbums.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        // Perform action on click
+        switch(v.getId()) {
+            case R.id.songs_text_view:
+                // create and start the browse songs intent
                 Intent browseSongsIntent = new Intent(MainActivity.this, BrowseSongsActivity.class);
                 browseSongsIntent.putExtra("songsWrapper", wrapper);
                 startActivity(browseSongsIntent);
-            }
-        });
-
-        //Set onClick Listener for artists_text_view
-        browseArtists.setOnClickListener (new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                break;
+            case R.id.artists_text_view:
+                // create and start the browse artists intent
                 Intent browseArtistsIntent = new Intent(MainActivity.this, BrowseArtistsActivity.class);
                 browseArtistsIntent.putExtra("songsWrapper", wrapper);
                 startActivity(browseArtistsIntent);
-            }
-        });
-
-        //Set onClick Listener for albums_text_view
-        browseAlbums.setOnClickListener (new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                break;
+            case R.id.albums_text_view:
+                // create and start the browse albums intent
                 Intent browseAlbumsIntent = new Intent(MainActivity.this, BrowseAlbumsActivity.class);
                 browseAlbumsIntent.putExtra("songsWrapper", wrapper);
                 startActivity(browseAlbumsIntent);
-            }
-        });
+                break;
+        }
+
     }
 }

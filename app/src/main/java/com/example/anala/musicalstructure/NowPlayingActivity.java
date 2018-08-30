@@ -3,9 +3,11 @@ package com.example.anala.musicalstructure;
 
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.OnLifecycleEvent;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,31 +17,34 @@ import java.util.ArrayList;
 public class NowPlayingActivity extends AppCompatActivity {
 
     //For the Play/Pause button
-    public boolean isPlaying = true;
+    private boolean isPlaying = true;
 
     //get the song/artist/album that was clicked
-    Song currentSong = BrowseSongsActivity.currentSong;
-    int currentSongIndex = BrowseSongsActivity.currentSongIndex;
-    Item currentArtist = BrowseArtistsActivity.currentArtist;
-    Item currentAlbum = BrowseAlbumsActivity.currentAlbum;
+    private Song currentSong = BrowseSongsActivity.currentSong;
+    private int currentSongIndex = BrowseSongsActivity.currentSongIndex;
+    private Item currentArtist = BrowseArtistsActivity.currentArtist;
+    private Item currentAlbum = BrowseAlbumsActivity.currentAlbum;
 
     //Variables
     private ArrayList<Song> songs;
-    TextView titleTextView;
-    ImageView songImageView;
-    TextView songNameTextView;
-    TextView songArtistTextView;
-    TextView songAlbumTextView;
-    ImageView playPauseButton;
-    ImageView previousButton;
-    ImageView nextButton;
-    ArrayList<Song> songsByCurrentArtist = new ArrayList<>();
-    ArrayList<Song> songsInCurrentAlbum = new ArrayList<>();
+    private TextView titleTextView;
+    private ImageView songImageView;
+    private TextView songNameTextView;
+    private TextView songArtistTextView;
+    private TextView songAlbumTextView;
+    private ImageView playPauseButton;
+    private ImageView previousButton;
+    private ImageView nextButton;
+    private ArrayList<Song> songsByCurrentArtist = new ArrayList<>();
+    private ArrayList<Song> songsInCurrentAlbum = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_playing);
+
+        //For up navigation
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Check what Activity you are coming from
         String fromActivity = getIntent().getStringExtra("FROM_ACTIVITY");
@@ -215,5 +220,16 @@ public class NowPlayingActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

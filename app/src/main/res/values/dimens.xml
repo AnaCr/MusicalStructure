@@ -2,14 +2,16 @@
 <resources>
 
     // Text Sizes
-    <dimen name="textSize24">24sp</dimen>
+    <dimen name="textsize_large">24sp</dimen>
+    <dimen name="textsize_medium">20sp</dimen>
+    <dimen name="textsize_small">16sp</dimen>
 
     // Padding and Margin
-    <dimen name="padding16">16dp</dimen>
-    <dimen name="padding8">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="margin_regular">8dp</dimen>
 
     //Image Sizes
-    <dimen name="image30">30dp</dimen>
-    <dimen name="image100">100dp</dimen>
-    <dimen name="image150">150dp</dimen>
+    <dimen name="size_browse_image">100dp</dimen>
+    <dimen name="size_nowplaying_image">150dp</dimen>
 </resources>

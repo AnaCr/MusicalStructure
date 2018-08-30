@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/padding16"
+    android:padding="@dimen/padding_large"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -21,9 +20,9 @@
             android:id="@+id/song_image_view"
 
             android:layout_width="match_parent"
-            android:layout_height="@dimen/image150"
+            android:layout_height="@dimen/size_nowplaying_image"
             android:gravity="center"
-            android:src="@drawable/album_icon" />
+            android:src="@drawable/albumicon" />
 
         <TextView
             android:id="@+id/song"
@@ -56,7 +55,7 @@
         <ImageView
             android:id="@+id/previous_button"
             style="@style/buttonStyle"
-            android:src="@drawable/rewind" />
+            android:src="@drawable/previous" />
 
         <ImageView
             android:id="@+id/play_pause_button"

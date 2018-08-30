@@ -27,7 +27,8 @@
             android:label="@string/albums" />
         <activity
             android:name=".NowPlayingActivity"
-            android:label="@string/nowPlaying" />
+            android:label="@string/nowPlaying"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

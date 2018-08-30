@@ -10,9 +10,9 @@
     <ImageView
         android:id="@+id/logo_image_view"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/image150"
+        android:layout_height="@dimen/size_nowplaying_image"
         android:gravity="center"
-        android:layout_margin="@dimen/padding16"
+        android:layout_margin="@dimen/padding_large"
         android:src="@drawable/applogo" />
 
     <TextView
