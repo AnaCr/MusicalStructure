@@ -1,12 +1,9 @@
 package com.example.anala.musicalstructure;
 
-
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.OnLifecycleEvent;
+import android.media.MediaPlayer;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,6 +12,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class NowPlayingActivity extends AppCompatActivity {
+
+    //Media Player
+    private MediaPlayer mMediaPlayer;
 
     //For the Play/Pause button
     private boolean isPlaying = true;
@@ -71,6 +71,9 @@ public class NowPlayingActivity extends AppCompatActivity {
             songNameTextView.setText(currentSong.getmSongName());
             songArtistTextView.setText(currentSong.getmSongArtist());
             songAlbumTextView.setText(currentSong.getmSongAlbum());
+
+            mMediaPlayer = MediaPlayer.create(NowPlayingActivity.this, R.raw.sample_song);
+            mMediaPlayer.start();
 
             //Functionality of the previous and next buttons
             //setOnClickListener for previous song button
@@ -213,9 +216,11 @@ public class NowPlayingActivity extends AppCompatActivity {
                 if (!isPlaying) {
                     playPauseButton.setImageDrawable(getResources().getDrawable(R.drawable.pause));
                     isPlaying = true;
+                    mMediaPlayer.start();
                 } else if (isPlaying) {
                     playPauseButton.setImageDrawable(getResources().getDrawable(R.drawable.play));
                     isPlaying = false;
+                    mMediaPlayer.pause();
                 }
 
             }
