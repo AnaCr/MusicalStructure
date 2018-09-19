@@ -72,7 +72,7 @@ public class NowPlayingActivity extends AppCompatActivity {
             songArtistTextView.setText(currentSong.getmSongArtist());
             songAlbumTextView.setText(currentSong.getmSongAlbum());
 
-            mMediaPlayer = MediaPlayer.create(NowPlayingActivity.this, R.raw.sample_song);
+            mMediaPlayer = MediaPlayer.create(NowPlayingActivity.this, currentSong.getmSongAudioFileId());
             mMediaPlayer.start();
 
             //Functionality of the previous and next buttons
@@ -81,6 +81,7 @@ public class NowPlayingActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if (currentSongIndex > 0) {
+                        mMediaPlayer.stop();
                         currentSongIndex--;
                         currentSong = songs.get(currentSongIndex);
                         //display the song info
@@ -88,6 +89,9 @@ public class NowPlayingActivity extends AppCompatActivity {
                         songNameTextView.setText(currentSong.getmSongName());
                         songArtistTextView.setText(currentSong.getmSongArtist());
                         songAlbumTextView.setText(currentSong.getmSongAlbum());
+                        mMediaPlayer = MediaPlayer.create(NowPlayingActivity.this,
+                                currentSong.getmSongAudioFileId());
+                        mMediaPlayer.start();
                     }
                 }
             });
@@ -97,6 +101,7 @@ public class NowPlayingActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if (currentSongIndex < songs.size() - 1) {
+                        mMediaPlayer.stop();
                         currentSongIndex++;
                         currentSong = songs.get(currentSongIndex);
                         //display the song info
@@ -104,6 +109,9 @@ public class NowPlayingActivity extends AppCompatActivity {
                         songNameTextView.setText(currentSong.getmSongName());
                         songArtistTextView.setText(currentSong.getmSongArtist());
                         songAlbumTextView.setText(currentSong.getmSongAlbum());
+                        mMediaPlayer = MediaPlayer.create(NowPlayingActivity.this,
+                                currentSong.getmSongAudioFileId());
+                        mMediaPlayer.start();
                     }
                 }
             });
@@ -123,10 +131,14 @@ public class NowPlayingActivity extends AppCompatActivity {
             titleTextView.setText("Now Playing Music by:\n" + currentArtist.getmItemName());
             //display the song info for the first song by this artist
             currentSongIndex = 0;
+            currentSong = songsByCurrentArtist.get(currentSongIndex);
             songImageView.setImageResource(currentArtist.getmItemDrawableId());
-            songNameTextView.setText(songsByCurrentArtist.get(currentSongIndex).getmSongName());
-            songArtistTextView.setText(songsByCurrentArtist.get(currentSongIndex).getmSongArtist());
-            songAlbumTextView.setText(songsByCurrentArtist.get(currentSongIndex).getmSongAlbum());
+            songNameTextView.setText(currentSong.getmSongName());
+            songArtistTextView.setText(currentSong.getmSongArtist());
+            songAlbumTextView.setText(currentSong.getmSongAlbum());
+
+            mMediaPlayer = MediaPlayer.create(NowPlayingActivity.this, currentSong.getmSongAudioFileId());
+            mMediaPlayer.start();
 
             //Functionality of the previous and next buttons
             //setOnClickListener for previous song button
@@ -134,11 +146,16 @@ public class NowPlayingActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if (currentSongIndex > 0) {
+                        mMediaPlayer.stop();
                         currentSongIndex--;
+                        currentSong = songsByCurrentArtist.get(currentSongIndex);
 
                         // get the previous song by currentArtist & display info
-                        songNameTextView.setText(songsByCurrentArtist.get(currentSongIndex).getmSongName());
-                        songAlbumTextView.setText(songsByCurrentArtist.get(currentSongIndex).getmSongAlbum());
+                        songNameTextView.setText(currentSong.getmSongName());
+                        songAlbumTextView.setText(currentSong.getmSongAlbum());
+                        mMediaPlayer = MediaPlayer.create(NowPlayingActivity.this,
+                                currentSong.getmSongAudioFileId());
+                        mMediaPlayer.start();
                     }
                 }
             });
@@ -148,11 +165,16 @@ public class NowPlayingActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if (currentSongIndex < songsByCurrentArtist.size() - 1) {
+                        mMediaPlayer.stop();
                         currentSongIndex++;
+                        currentSong = songsByCurrentArtist.get(currentSongIndex);
 
                         // get the next song by currentArtist & display the song info
-                        songNameTextView.setText(songsByCurrentArtist.get(currentSongIndex).getmSongName());
-                        songAlbumTextView.setText(songsByCurrentArtist.get(currentSongIndex).getmSongAlbum());
+                        songNameTextView.setText(currentSong.getmSongName());
+                        songAlbumTextView.setText(currentSong.getmSongAlbum());
+                        mMediaPlayer = MediaPlayer.create(NowPlayingActivity.this,
+                                currentSong.getmSongAudioFileId());
+                        mMediaPlayer.start();
                     }
                 }
             });
@@ -172,10 +194,14 @@ public class NowPlayingActivity extends AppCompatActivity {
 
             //display the song info for the first song in this album
             currentSongIndex = 0;
+            currentSong = songsInCurrentAlbum.get(currentSongIndex);
             songImageView.setImageResource(currentAlbum.getmItemDrawableId());
-            songNameTextView.setText(songsInCurrentAlbum.get(currentSongIndex).getmSongName());
-            songArtistTextView.setText(songsInCurrentAlbum.get(currentSongIndex).getmSongArtist());
-            songAlbumTextView.setText(songsInCurrentAlbum.get(currentSongIndex).getmSongAlbum());
+            songNameTextView.setText(currentSong.getmSongName());
+            songArtistTextView.setText(currentSong.getmSongArtist());
+            songAlbumTextView.setText(currentSong.getmSongAlbum());
+
+            mMediaPlayer = MediaPlayer.create(NowPlayingActivity.this, currentSong.getmSongAudioFileId());
+            mMediaPlayer.start();
 
             //Functionality of the previous and next buttons
             //setOnClickListener for previous song button
@@ -183,11 +209,16 @@ public class NowPlayingActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if (currentSongIndex > 0) {
+                        mMediaPlayer.stop();
                         currentSongIndex--;
+                        currentSong = songsInCurrentAlbum.get(currentSongIndex);
 
                         // get the previous song by currentArtist & display info
-                        songNameTextView.setText(songsInCurrentAlbum.get(currentSongIndex).getmSongName());
-                        songAlbumTextView.setText(songsInCurrentAlbum.get(currentSongIndex).getmSongAlbum());
+                        songNameTextView.setText(currentSong.getmSongName());
+                        songAlbumTextView.setText(currentSong.getmSongAlbum());
+                        mMediaPlayer = MediaPlayer.create(NowPlayingActivity.this,
+                                currentSong.getmSongAudioFileId());
+                        mMediaPlayer.start();
                     }
                 }
             });
@@ -197,11 +228,16 @@ public class NowPlayingActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if (currentSongIndex < songsInCurrentAlbum.size() - 1) {
+                        mMediaPlayer.stop();
                         currentSongIndex++;
+                        currentSong = songsInCurrentAlbum.get(currentSongIndex);
 
                         // get the next song by currentArtist & display the song info
-                        songNameTextView.setText(songsInCurrentAlbum.get(currentSongIndex).getmSongName());
-                        songAlbumTextView.setText(songsInCurrentAlbum.get(currentSongIndex).getmSongAlbum());
+                        songNameTextView.setText(currentSong.getmSongName());
+                        songAlbumTextView.setText(currentSong.getmSongAlbum());
+                        mMediaPlayer = MediaPlayer.create(NowPlayingActivity.this,
+                                currentSong.getmSongAudioFileId());
+                        mMediaPlayer.start();
                     }
                 }
             });

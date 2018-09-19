@@ -27,59 +27,59 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // List the songs
         songs = new ArrayList<Song>();
         songs.add(new Song("Young Robot", "Dance Gavin Dance",
-                "Mothership", R.drawable.mothership));
+                "Mothership", R.drawable.mothership, R.raw.blues_sample));
         songs.add(new Song("Frozen One", "Dance Gavin Dance",
-                "Mothership", R.drawable.mothership));
+                "Mothership", R.drawable.mothership, R.raw.sample_song));
         songs.add(new Song("Flossie Dickey Bounce", "Dance Gavin Dance",
-                "Mothership", R.drawable.mothership));
+                "Mothership", R.drawable.mothership, R.raw.songbird_sample));
         songs.add(new Song("Deception", "Dance Gavin Dance",
-                "Mothership", R.drawable.mothership));
+                "Mothership", R.drawable.mothership, R.raw.blues_sample));
         songs.add(new Song("Song of Robot", "Dance Gavin Dance",
-                "Artificial Selection", R.drawable.artificialselection));
+                "Artificial Selection", R.drawable.artificialselection, R.raw.sample_song));
         songs.add(new Song("Suspended in This Disaster", "Dance Gavin Dance",
-                "Artificial Selection", R.drawable.artificialselection));
+                "Artificial Selection", R.drawable.artificialselection, R.raw.songbird_sample));
         songs.add(new Song("Care", "Dance Gavin Dance",
-                "Artificial Selection", R.drawable.artificialselection));
+                "Artificial Selection", R.drawable.artificialselection, R.raw.blues_sample));
         songs.add(new Song("Evaporate", "Dance Gavin Dance",
-                "Artificial Selection", R.drawable.artificialselection));
+                "Artificial Selection", R.drawable.artificialselection, R.raw.sample_song));
         songs.add(new Song("Up All Night", "Blink-182",
-                "Neighborhoods", R.drawable.neighborhoods));
+                "Neighborhoods", R.drawable.neighborhoods, R.raw.songbird_sample));
         songs.add(new Song("Heart's All Gone", "Blink-182",
-                "Neighborhoods", R.drawable.neighborhoods));
+                "Neighborhoods", R.drawable.neighborhoods, R.raw.blues_sample));
         songs.add(new Song("Secret Valentine", "We The Kings",
-                "We The Kings", R.drawable.wtkalbum));
+                "We The Kings", R.drawable.wtkalbum, R.raw.sample_song));
         songs.add(new Song("Stay Young", "We The Kings",
-                "We The Kings", R.drawable.wtkalbum));
+                "We The Kings", R.drawable.wtkalbum, R.raw.songbird_sample));
         songs.add(new Song("Whoa", "We The Kings",
-                "We The Kings", R.drawable.wtkalbum));
+                "We The Kings", R.drawable.wtkalbum, R.raw.blues_sample));
         songs.add(new Song("All Again For You", "We The Kings",
-                "We The Kings", R.drawable.wtkalbum));
+                "We The Kings", R.drawable.wtkalbum, R.raw.sample_song));
         songs.add(new Song("Find You There", "We The Kings",
-                "Somewhere Somehow", R.drawable.somewhere));
+                "Somewhere Somehow", R.drawable.somewhere, R.raw.songbird_sample));
         songs.add(new Song("I Feel Alive", "We The Kings",
-                "Somewhere Somehow", R.drawable.somewhere));
+                "Somewhere Somehow", R.drawable.somewhere, R.raw.blues_sample));
         songs.add(new Song("Sad Song", "We The Kings",
-                "Somewhere Somehow", R.drawable.somewhere));
+                "Somewhere Somehow", R.drawable.somewhere, R.raw.sample_song));
         songs.add(new Song("Just Keep Breathing", "We The Kings",
-                "Somewhere Somehow", R.drawable.somewhere));
+                "Somewhere Somehow", R.drawable.somewhere, R.raw.songbird_sample));
         songs.add(new Song("The Ocean and The Sun", "We The Kings",
-                "Six", R.drawable.six));
+                "Six", R.drawable.six, R.raw.blues_sample));
         songs.add(new Song("Alive", "We The Kings",
-                "Six", R.drawable.six));
+                "Six", R.drawable.six, R.raw.sample_song));
         songs.add(new Song("I Won't Settle", "We The Kings",
-                "Six", R.drawable.six));
+                "Six", R.drawable.six, R.raw.songbird_sample));
         songs.add(new Song("Planes, Trains, & Cars", "We The Kings",
-                "Six", R.drawable.six));
+                "Six", R.drawable.six, R.raw.blues_sample));
         songs.add(new Song("American Love", "Smallpools",
-                "Lovetap!", R.drawable.lovetap));
+                "Lovetap!", R.drawable.lovetap, R.raw.sample_song));
         songs.add(new Song("Dreaming", "Smallpools",
-                "Lovetap!", R.drawable.lovetap));
+                "Lovetap!", R.drawable.lovetap, R.raw.songbird_sample));
         songs.add(new Song("Karaoke", "Smallpools",
-                "Lovetap!", R.drawable.lovetap));
+                "Lovetap!", R.drawable.lovetap, R.raw.blues_sample));
         songs.add(new Song("Street Fight", "Smallpools",
-                "Lovetap!", R.drawable.lovetap));
+                "Lovetap!", R.drawable.lovetap, R.raw.sample_song));
         songs.add(new Song("Lovetap!", "Smallpools",
-                "Lovetap!", R.drawable.lovetap));
+                "Lovetap!", R.drawable.lovetap, R.raw.songbird_sample));
 
         // Create wrapper to send ArrayList as intent extra
         wrapper = new SongWrapper(songs);
